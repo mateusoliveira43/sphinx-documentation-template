@@ -1,0 +1,1 @@
+"""Folder inside project."""
