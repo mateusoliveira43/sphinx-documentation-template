@@ -2,7 +2,7 @@
 
 - [Arquivo README em português](docs/README_PT.md)
 
-Template of Sphinx documentation for Python projects. Check the documentation generated [here]().
+Template of Sphinx documentation for Python projects. Check the documentation generated [here](https://mateusoliveira43.github.io/sphinx-documentation-template/).
 
 # Quality
 
