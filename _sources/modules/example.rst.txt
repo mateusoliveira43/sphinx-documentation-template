@@ -1,0 +1,37 @@
+example package
+===============
+
+.. automodule:: example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   example.folder
+
+Submodules
+----------
+
+example.\_\_main\_\_ module
+---------------------------
+
+.. automodule:: example.__main__
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.utils module
+--------------------
+
+.. automodule:: example.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

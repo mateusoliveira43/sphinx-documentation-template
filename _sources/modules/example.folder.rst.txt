@@ -1,0 +1,29 @@
+example.folder package
+======================
+
+.. automodule:: example.folder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Submodules
+----------
+
+example.folder.class module
+---------------------------
+
+.. automodule:: example.folder.class
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.folder.function module
+------------------------------
+
+.. automodule:: example.folder.function
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
