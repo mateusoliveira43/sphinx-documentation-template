@@ -2,7 +2,7 @@
 
 - [README file in English](../README.md)
 
-Modelo de documentação do Sphinx para projetos Python. Confira a documentação gerada [aqui]().
+Modelo de documentação do Sphinx para projetos Python. Confira a documentação gerada [aqui](https://mateusoliveira43.github.io/sphinx-documentation-template/).
 
 # Qualidade
 
