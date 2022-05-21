@@ -1,0 +1,60 @@
+name: Continuos Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10",
+          "pypy-3.7",
+          "pypy-3.8"
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements/*.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install Python dependencies
+        run: pip install -r requirements/dev.txt
+
+      - name: Python linter
+        run: prospector .
+
+      - name: Code format
+        run: |
+          isort --check --diff .
+          black --check --diff .
+          ec -verbose
+
+      - name: Security vulnerability scan
+        run: |
+          bandit --recursive scripts
+          safety check --file requirements/dev.txt --full-report
+
+      - name: Test documentation
+        run: |
+          sphinx-apidoc -M -P -o docs/modules example
+          sphinx-build -W -T -v -n docs public
