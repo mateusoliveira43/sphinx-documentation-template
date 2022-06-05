@@ -2,10 +2,12 @@
 
 # -- Path setup --------------------------------------------------------------
 
-import os
 import sys
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath("../"))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.as_posix()
+
+sys.path.append(PROJECT_ROOT)
 
 
 # -- Project information -----------------------------------------------------
